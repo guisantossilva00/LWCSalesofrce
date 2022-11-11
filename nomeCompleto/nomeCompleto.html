@@ -1,0 +1,43 @@
+<template>
+    <div class="container">
+        <div>
+            <p>Nome</p>
+
+            <input 
+                type="text" 
+                value={firstName} 
+                name="nome"
+                onchange={getName} 
+                placeholder="Ex. Guilherme">
+        </div>
+        <div>
+            <p>Sobrenome</p>
+
+            <input 
+                type="text" 
+                value={lastName} 
+                name="sobrenome" 
+                onchange={getName} 
+                placeholder="Ex. Santos">
+        </div>
+        <div>
+            <p>Empresa</p>
+
+            <input 
+                type="text" 
+                value={empresa} 
+                name="empresa" 
+                onchange={getName} 
+                placeholder="Ex. It Lean">
+        </div>
+        <button
+            onclick={salvar}>Salvar
+        </button>
+        <button
+            onclick={reset}>Limpar
+        </button>
+    </div>
+    <lightning-card>
+        <h1>{setNomeCompleto}</h1>
+    </lightning-card>
+</template>

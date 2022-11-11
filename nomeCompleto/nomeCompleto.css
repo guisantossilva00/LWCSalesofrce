@@ -1,0 +1,36 @@
+.container {
+    background-color: #19bfff;
+    padding: 20px;
+    border-radius: 20px;
+}
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1c5571;
+}
+
+input{
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    color: royalblue;
+    background-color: #004570;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    background-color: #6ee0f7;
+}

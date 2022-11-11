@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="For com Array" icon-name="utility:user">
+        <div style="padding:10px">
+            <table border="1">
+                <thead>
+                    <tr class="slds-line-height-reset">
+                        <td>Student: </td>
+                        <td>Class</td>
+                        <td>Fee</td>
+                    </tr>
+                    <template for:each={students} for:item="student">
+                        <tr key={student.Id} class="slds-hint-parent">
+                            <td>{student.Name}</td>
+                            <td>{student.Class}</td>
+                            <td>{student.Fee}</td>
+                        </tr>
+                    </template>
+                </thead>
+            </table>
+        </div>
+    </lightning-card>
+</template>

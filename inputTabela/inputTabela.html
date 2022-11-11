@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Expressão com JS" icon-name="utility:user">
+        <div class="slds-var-a-around_medium">
+            <lightning-input name="fullName" label="Full Name" onchange={handleChange}></lightning-input>
+            <lightning-input type="number" name="phone" label="celular" onchange={handleChange}></lightning-input>
+            <lightning-input type="email" name="email" label="Email" onchange={handleChange}></lightning-input>
+        </div>
+        <div>
+            <table border="1">
+                <thead>
+                    <tr class="slds-line-height-reset">
+                        <td>Full Name : </td>
+                        <td>{upperCase}</td>
+                    </tr>
+                    <tr class="slds-line-height-reset">
+                        <td>Celular : </td>
+                        <td>{phone}</td>
+                    </tr>
+                    <tr class="slds-line-height-reset">
+                        <td>Email : </td>
+                        <td>{email}</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </lightning-card>
+</template>
