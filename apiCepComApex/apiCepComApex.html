@@ -1,0 +1,30 @@
+<template>
+    <lightning-card 
+        title="Consulta CEP com Class Apex"
+        icon-name="custom:custom63">
+    </lightning-card>
+    <lightning-card class="slds-var-m-around_medium">
+        <lightning-input
+            label="Coloca seu CEP"
+            type="string"
+            value={cep}
+            onchange={pegaCepHtml}>
+        </lightning-input>
+    </lightning-card>
+    <lightning-card>
+        <h1>cep : {cep}</h1>
+        <!-- <template for:each={resultado.data} for:item="result">
+            <p key={result.city}>{contact.city}</p>
+        </template> -->
+        <template if:true={resultadoConsulta}>
+                <p>CEP : {resultadoConsulta.code}</p>
+                <p>Estado : {resultadoConsulta.state}</p>
+                <p>Cidade {resultadoConsulta.city}</p>
+                <p>Bairro {resultadoConsulta.district}</p>
+                <p>Rua {resultadoConsulta.address}</p>
+        </template>
+        <template if:true={error}>
+            <p>erro {error}</p>
+        </template>
+    </lightning-card>
+</template>
