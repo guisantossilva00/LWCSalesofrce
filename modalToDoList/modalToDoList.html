@@ -1,0 +1,9 @@
+<template>
+    <template if:true={getTarefa}>
+        <div class="btn-input">
+            <button class="btnAdd" title="add" onclick={atualizar} data-id={getTarefa.Id}><i class="fa fa-plus"></i></button>
+    
+            <input type="text" name="nome" onchange={inputAdd} placeholder="Atualizar a Tarefa" value={getTarefa.Name}>
+        </div>
+    </template>
+</template>

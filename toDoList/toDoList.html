@@ -1,0 +1,51 @@
+<template>
+    <div class="fundo-completo">
+        <header>
+            <div class="tarefas-pendente">
+                <img src="https://cdn-icons-png.flaticon.com/512/168/168882.png" alt="Icone de avatar" title="Icone de avatar">
+                <div>
+                    <h3>Hi Guilherme</h3>
+                    <template if:true={quantidade}>
+                        <p>{quantidade} tasks pending</p>
+                    </template>
+                    <template if:false={quantidade}>
+                        <p>0 tasks pending</p>
+                    </template>
+                </div>
+            </div>
+            <div>
+                <h1>TaskDo</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="btn-input">
+                <button class="btnAdd" title="add" onclick={criarTarefa}><i class="fa fa-plus"></i></button>
+    
+                <input type="text" name="nome" onchange={inputAdd} placeholder="Adicionar Nova Tarefa">
+            </div>
+            
+            <template if:true={listaTarefas}>
+                <template for:each={listaTarefas} for:item="tarefa">
+                    <div class="area-tarefa" key={tarefa.Id}>
+                        <button title="delete" class="delete" onclick={deletarTarefa} data-id={tarefa.Id}><i class="fa fa-trash"></i></button>
+                        
+                        <button title="edit" onclick={editarTarefa} class="edit" data-nameedit={tarefa.Name}><i class="fa fa-pencil"></i></button>
+                        
+                        <input type="checkbox" name="concluido" onclick={updateConcluido} data-id={tarefa.Id} checked={tarefa.Concluido__c}>
+                        
+                        <template if:true={tarefa.Concluido__c}>
+                            <p class="text-check">{tarefa.Name}</p>
+                        </template>
+                        
+                        <template if:false={tarefa.Concluido__c}>
+                            <p>{tarefa.Name}</p>
+                        </template>
+                        
+                        <c-modal-to-do-list get-tarefa={tarefa} data-name={tarefa.Name}></c-modal-to-do-list>
+                    </div>
+                </template>
+            </template>            
+        </main>
+    </div>        
+</template>

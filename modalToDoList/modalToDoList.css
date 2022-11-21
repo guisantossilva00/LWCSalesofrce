@@ -1,0 +1,43 @@
+
+.btn-input{
+    display: flex;
+    margin: 30px;
+    background-color: #FFFFFF;
+}
+
+.btnAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B47AEA;
+    color: #FFFFFF;
+    font-size: 24px;
+    border-radius: 50%;
+    border: none;
+    width: 32px;
+    height: 32px;
+    margin: 10px 0;
+}
+
+.btnAdd i {
+    font-size: 15px;
+}
+
+input[type=text] {
+    border: none;
+    background-color: none;
+    color: #B47AEA;
+    font-size: 24px;
+    outline: none;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+input[type=text]::placeholder {
+    color: #B47AEA;
+    font-weight: bold;
+}
+
+input[type=text]:focus {
+    border-bottom: 1px solid #B47AEA;
+}
