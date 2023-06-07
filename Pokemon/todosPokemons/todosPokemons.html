@@ -1,0 +1,22 @@
+<template>
+    <template lwc:if={pokemons}>
+        <div class="container">
+            <template for:each={pokemons} for:item="pokemon">
+                <c-unico-pokemon
+                onpokemonselecionado={handlePokemonSelecionado}
+                key={pokemon.order}
+                pokemon={pokemon}
+                >
+                </c-unico-pokemon>
+            </template>
+        </div>
+    </template>
+    <template lwc:else>
+        <figure>
+            <img src={carregamento} alt="Carregamento Pokebola">
+        </figure>
+    </template>
+    <template lwc:if={detalhePokemon} >
+        <c-detalhe-pokemon info-pokemon={infoPokemon} onfecharmodal={abrirFecharModal}></c-detalhe-pokemon>
+    </template>
+</template>

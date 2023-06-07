@@ -1,0 +1,137 @@
+@import 'c/cssGlobal';
+
+.pokebola-capturando {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pokebola-capturando img {
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-pokemon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalhe-pokemon {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+    width: 90%;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.tipo-pokemon {
+    display: flex;
+    gap: 10px;
+}
+
+.tamanho-pokemon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.tamanho-pokemon span {
+    width: 2px;
+    background-color: #ffd500;
+    height: 20px;
+    border-radius: 4px;
+}
+.tamanho-pokemon p {
+    font-size: 16pxd;
+}
+
+.status div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.status .status-name {
+    width: 90px;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 250px;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress[value]::-webkit-progress-bar {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+} 
+
+
+progress[value]::-webkit-progress-value {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.hp::-webkit-progress-value {
+    background-color: #d53b47;
+}
+
+.hp::-webkit-progress-bar {
+    background-color: #d53b485f;
+}
+
+.attack::-webkit-progress-value { 
+    background-color: #ffa827;
+}
+
+.attack::-webkit-progress-bar {
+    background-color: #ffa8275f;
+}
+
+.defense::-webkit-progress-value {
+    background-color: #0091ea;
+}
+
+.defense::-webkit-progress-bar {
+    background-color: #0091ea5f;
+}
+
+.special-attack::-webkit-progress-value {
+    background-color: #f99500;
+}
+
+.special-attack::-webkit-progress-bar {
+    background-color: #f995005f;
+}
+
+.special-defense::-webkit-progress-value {
+    background-color: #007bc7;
+}
+.special-defense::-webkit-progress-bar {
+    background-color: #007bc75f;
+}
+
+.speed::-webkit-progress-value {
+    background-color: #90b0c5;
+}
+.speed::-webkit-progress-bar {
+    background-color: #90b0c55f;
+}
+

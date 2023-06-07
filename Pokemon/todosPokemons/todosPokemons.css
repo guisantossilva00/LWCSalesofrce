@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+c-unico-pokemon {
+    transition: 0.3s;
+    flex: 1 1 210px;
+    max-width: 296px;
+    height: 180px;
+}
+
+c-unico-pokemon:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

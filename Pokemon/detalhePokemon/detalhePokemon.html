@@ -1,0 +1,59 @@
+<template>
+    <h1>aqui</h1>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={fecharModal}>
+                <!-- <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg> -->X
+                <span class="slds-assistive-text">Cancel and close</span>
+            </button>
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Detalhe do {infoPokemon.name}</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium info-pokemon" id="modal-content-id-1">
+                <template lwc:if={capturando}>
+                    <figure class="pokebola-capturando">
+                        <img src={imgCapturando} alt="Imagem pokebola">
+                    </figure>
+                </template>
+                <template lwc:else>
+                    <div class="detalhe-pokemon">
+                        <header>
+                            <h1>{infoPokemon.name}</h1>
+                            <div class="tipo-pokemon">
+                                <template for:each={infoPokemon.types} for:item="tipo">
+                                    <div class={tipo.type.name} key={tipo.type.name}>
+                                        <p>{tipo.type.name}</p>
+                                    </div>
+                                </template>
+                            </div>
+                        </header>
+                        <main class="tamanho-pokemon">
+                            <p><strong>Altura:</strong> {infoPokemon.height}</p>
+                            <span></span>
+                            <p><strong>Peso:</strong> {infoPokemon.weight}</p>
+                        </main>
+                        <footer class="status">
+                            <template for:each={infoPokemon.stats} for:item="status">
+                                <div key={status.stat.name} >
+                                    <p class="status-name">{status.stat.name}</p>
+                                    <p>{status.base_stat}</p>
+                                    <progress class={status.stat.name} max="100" value={status.base_stat}></progress>
+                                </div>                        
+                            </template>
+                        </footer>
+                    </div>
+                    <figure>
+                        <img src={infoPokemon.sprites.other.home.front_default} alt="imagem do pokemon" width="200px">
+                    </figure>  
+                </template>
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={fecharModal} disabled={disableButton}>Cancel</button>
+                <button class="slds-button slds-button_destructive" aria-label="Captura" onclick={capturaPokemon} data-experience={infoPokemon.base_experience} disabled={disableButton}>Capturar</button>
+            </div>                
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <div class="container" onclick={clickPokemon}>
+        <div class="titulo-pokemon">
+            <h1>{pokemon.name}</h1>
+            <p>#{pokemon.id}</p>
+        </div>
+        <div class="info-pokemon">
+            <div class="tipo-pokemon">
+                <template for:each={pokemon.types} for:item="tipo">
+                    <div class={tipo.type.name} key={tipo.type.name}>
+                        <p>{tipo.type.name}</p>
+                    </div>
+                </template>
+            </div>
+            <figure>
+                <img src={pokemon.sprites.other.home.front_default} alt="imagem do pokemon" width="200px">
+            </figure>
+        </div>
+    </div>
+</template>
